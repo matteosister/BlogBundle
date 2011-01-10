@@ -1,0 +1,14 @@
+blog_home:
+    pattern:  /blog
+    defaults:
+        _controller: BlogBundle:Blog:home
+
+blog_post:
+    pattern:  /blog/:slug
+    defaults:
+        _controller: BlogBundle:Blog:post
+
+blog_tag:
+    pattern:  /blog/tag/:slug
+    defaults:
+        _controller: BlogBundle:Blog:tag

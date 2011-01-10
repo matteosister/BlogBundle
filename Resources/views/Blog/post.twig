@@ -1,0 +1,27 @@
+{% extends "BlogBundle::blog.twig" %}
+
+{% block content %}
+    <div class="post span-18">
+        <div class="the-post">
+            <h3>{{ post }}</h3>
+            <p>{{ post.theText }}</p>
+        </div>
+        <div class="comments">
+            <h4 class="quiet">Comments</h4>
+            <ul class="comment-list prepend-top">
+                {% for comment in post.comments %}
+                    <li class="{{ loop.index % 2 == 0 ? 'even' : 'odd' }} {{ loop.first ? 'first' : '' }} {{ loop.last ? 'last' : '' }} append-bottom">
+                        <strong>{{ comment.user }}:</strong> {{ comment.theText }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="metadata box span-5 last">
+        <h3 class="caps">last comment</h3>
+        <p class="quiet">Lorem ipsum</p>
+    </div>
+{% endblock %}

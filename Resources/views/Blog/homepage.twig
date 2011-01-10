@@ -1,0 +1,35 @@
+{% extends "BlogBundle::blog.twig" %}
+
+{% block title %}{{ parent() }} :: Homepage{% endblock %}
+
+{% block content %}
+    <div class="posts span-18">
+        {% for post in posts %}
+            {% include 'BlogBundle:Blog:post_preview.twig' %}
+            {% if not loop.last %}<hr />{% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="metadata box span-5 last">
+        <h3 class="caps">categorie</h3>
+        <ul>
+        {% for category in categories %}
+            <li class="quiet">{{ category }} ({{ category.posts|length }})</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="metadata box span-5 last">
+        <h3 class="caps">tags</h3>
+        <ul>
+        {% for tag in tags %}
+            <li class="quiet">{{ tag }} ({{ tag.posts|length }})</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="metadata box span-5 last">
+        <h3 class="caps">last comment</h3>
+        <p class="quiet">Lorem ipsum</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,167 @@
+/* 
+    Document   : BlogBundle
+    Created on : 3-gen-2011, 23.28.27
+    Author     : matteo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.blogbundle {
+    font-family: 'Ubuntu', verdana, arial, serif;
+}
+
+.blogbundle a {
+    font-family: 'Ubuntu', verdana, arial, serif;
+}
+
+.blogbundle ul li {
+    list-style-type: none;
+}
+.blogbundle h1 {
+    font-family: 'Ubuntu', verdana, arial, serif;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.blogbundle h2 {
+    font-family: 'Ubuntu', verdana, arial, serif;
+}
+
+.blogbundle p {
+    font-size: 1.1em;
+    font-family: 'Ubuntu', verdana, arial, serif;
+}
+
+.blogbundle p.abstract {
+}
+
+.blogbundle h2.post-title {
+}
+
+.blogbundle h2.post-title a {
+    text-decoration: none;
+    color: #666;
+}
+
+.blogbundle h2.post-title a:hover {
+    color: #333;
+}
+
+.blogbundle .metadata {
+    background-color: #EEE;
+}
+
+.blogbundle h4 {
+   margin-bottom: 0em;
+}
+.blogbundle #main-menu ul {
+    padding-left: 0;
+}
+.blogbundle #main-menu ul li {
+    float: left;
+    list-style-type: none;
+}
+.blogbundle #main-menu ul li a {
+    font-family: 'Ubuntu', verdana, arial, serif;
+    font-size: 1.2em;
+    color: #EEE;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.blogbundle #main-menu ul li a:hover {
+    background-color: #999;
+    color: #000;
+    text-decoration: underline;
+}
+.blogbundle #main-menu ul li.selected a {
+    background-color: #1B62DF;
+}
+.blogbundle #main-menu ul li.selected a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.blogbundle #main-menu ul li {
+    margin: 10px;
+}
+.blogbundle #main-menu ul li.first {
+    margin-left: 0px;
+}
+
+.blogbundle .metadata ul {
+    padding-left: 0;
+}
+
+.blogbundle ul.tag-list {
+    padding-left: 0;
+    float: left;
+}
+.blogbundle ul.tag-list li {
+    float: left;
+    margin: 0px 5px;
+}
+.blogbundle ul.tag-list li a {
+    text-decoration: none;
+    padding: 2px 8px;
+    border: 1px solid #DDD;
+}
+.blogbundle ul.tag-list li a:hover {
+    text-decoration: underline;
+    background-color: #DDD;
+    color: #333;
+}
+.blogbundle ul.tag-list li.first {
+    margin-left: 0;
+}
+.blogbundle ul.tag-list li.last {
+    margin-right: 0;
+}
+
+.blogbundle ul.comment-list {
+    padding-left: 0;
+}
+.blogbundle ul.comment-list li {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 15px;
+}
+.blogbundle ul.comment-list li.first {
+}
+.blogbundle ul.comment-list li.last {
+    border-bottom: none;
+}
+.blogbundle ul.comment-list li.odd {
+}
+.blogbundle ul.comment-list li.even {
+}
+
+.blogbundle .post-preview {
+    position: relative;
+}
+
+.blogbundle .post-preview .date {
+    background-color: #EEE;
+    padding: 2px;
+    font-style: normal;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.blogbundle .post-preview .date div {
+    text-align: center;
+}
+.blogbundle .post-preview .date div.day {
+    font-size: 3em;
+}
+.blogbundle .post-preview .date div.month {
+    font-size: 1.3em;
+}
