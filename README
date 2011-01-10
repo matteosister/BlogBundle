@@ -1,7 +1,7 @@
 A simple blog bundle. (just for fun)
 
 - twig templates
-- doctrine2 with annotation
+- doctrine2 with annotations
 - 4 model classes (post, category, tag and comment)
 - fixtures to load dummy data
 
