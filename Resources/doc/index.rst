@@ -52,9 +52,8 @@ and add the relative line in the AppKernel.php
     blog:
         resource: BlogBundle/Resources/config/routing.yml
 
-
-mission accomplished
---------------------
+that's it
+---------
 
     Now, in your browser, go to http://foo.bar/blog
 
