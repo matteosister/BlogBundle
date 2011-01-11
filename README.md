@@ -24,14 +24,14 @@ Installation
     and add the relative line in the AppKernel.php
 
     //app/ApplicationKernel.php
-    public function registerBundles()
-    {
-        return array(
-            // ...
-            new Bundle\BluePrintBundle\BluePrintBundle(),
-            // ...
-        );
-    }
+        public function registerBundles()
+        {
+            return array(
+                // ...
+                new Bundle\BluePrintBundle\BluePrintBundle(),
+                // ...
+            );
+        }
 
 4) Publish assets from both the bundles.
 
