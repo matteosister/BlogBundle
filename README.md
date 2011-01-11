@@ -6,7 +6,7 @@ Installation
 
     $ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/BlogBundle
 
-2) Add this bundle to your application's *kernel file*:
+2) Add this bundle to your application's **kernel file**:
 
     //app/ApplicationKernel.php
     public function registerBundles()
