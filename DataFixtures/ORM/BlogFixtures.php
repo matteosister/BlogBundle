@@ -29,19 +29,19 @@ class BlogFixtures implements FixtureInterface {
     private function generatePosts()
     {
         $category1 = new Category();
-        $category1->setName('Categoria 1');
+        $category1->setName('Category 1');
 
         $category2 = new Category();
-        $category2->setName('Categoria 2');
+        $category2->setName('Category 2');
 
         $tag1 = new Tag();
-        $tag1->setLabel('pippo');
+        $tag1->setLabel('linux');
 
         $tag2 = new Tag();
-        $tag2->setLabel('pluto');
+        $tag2->setLabel('symfony2');
 
         $tag3 = new Tag();
-        $tag3->setLabel('paperino');
+        $tag3->setLabel('php');
 
         $comment1 = $this->generateRandomComment();
         $comment2 = $this->generateRandomComment();
@@ -73,7 +73,7 @@ class BlogFixtures implements FixtureInterface {
     private function generateRandomComment()
     {
         $comment = new Comment();
-        $comment->setUser('pippo');
+        $comment->setUser('Mickey Mouse');
         $comment->setTheText($this->generateLoremIpsum());
         $comment->setDate(new DateTime('2011-02-'.rand(1,31)));
         return $comment;
