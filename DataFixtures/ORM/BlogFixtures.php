@@ -6,10 +6,10 @@
  */
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Application\BlogBundle\Entity\Post;
-use Application\BlogBundle\Entity\Category;
-use Application\BlogBundle\Entity\Tag;
-use Application\BlogBundle\Entity\Comment;
+use Bundle\BlogBundle\Entity\Post;
+use Bundle\BlogBundle\Entity\Category;
+use Bundle\BlogBundle\Entity\Tag;
+use Bundle\BlogBundle\Entity\Comment;
 
 class BlogFixtures implements FixtureInterface {
 

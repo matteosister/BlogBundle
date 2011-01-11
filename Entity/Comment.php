@@ -6,7 +6,7 @@
  */
 
 
-namespace Application\BlogBundle\Entity;
+namespace Bundle\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -91,9 +91,9 @@ class Comment {
     /**
      * Add children
      *
-     * @param Application\BlogBundle\Entity\Comment $children
+     * @param Bundle\BlogBundle\Entity\Comment $children
      */
-    public function addChildren(\Application\BlogBundle\Entity\Comment $children)
+    public function addChildren(\Bundle\BlogBundle\Entity\Comment $children)
     {
         $this->children[] = $children;
     }
@@ -110,9 +110,9 @@ class Comment {
     /**
      * Set post
      *
-     * @param Application\BlogBundle\Entity\post $post
+     * @param Bundle\BlogBundle\Entity\post $post
      */
-    public function setPost(\Application\BlogBundle\Entity\post $post)
+    public function setPost(\Bundle\BlogBundle\Entity\post $post)
     {
         $this->post = $post;
     }
@@ -120,7 +120,7 @@ class Comment {
     /**
      * Get post
      *
-     * @return Application\BlogBundle\Entity\post $post
+     * @return Bundle\BlogBundle\Entity\post $post
      */
     public function getPost()
     {
@@ -130,9 +130,9 @@ class Comment {
     /**
      * Set parent
      *
-     * @param Application\BlogBundle\Entity\Comment $parent
+     * @param Bundle\BlogBundle\Entity\Comment $parent
      */
-    public function setParent(\Application\BlogBundle\Entity\Comment $parent)
+    public function setParent(\Bundle\BlogBundle\Entity\Comment $parent)
     {
         $this->parent = $parent;
     }
@@ -140,7 +140,7 @@ class Comment {
     /**
      * Get parent
      *
-     * @return Application\BlogBundle\Entity\Comment $parent
+     * @return Bundle\BlogBundle\Entity\Comment $parent
      */
     public function getParent()
     {

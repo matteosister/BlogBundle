@@ -5,7 +5,7 @@
  *  Just for fun...
  */
 
-namespace Application\BlogBundle\Entity;
+namespace Bundle\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -74,9 +74,9 @@ class Category {
     /**
      * Add posts
      *
-     * @param Application\BlogBundle\Entity\Post $posts
+     * @param Bundle\BlogBundle\Entity\Post $posts
      */
-    public function addPosts(\Application\BlogBundle\Entity\Post $posts)
+    public function addPosts(\Bundle\BlogBundle\Entity\Post $posts)
     {
         $this->posts[] = $posts;
     }

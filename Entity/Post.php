@@ -5,9 +5,9 @@
  *  Just for fun...
  */
 
-namespace Application\BlogBundle\Entity;
+namespace Bundle\BlogBundle\Entity;
 
-use Application\BlogBundle\BlogBundle;
+use Bundle\BlogBundle\BlogBundle;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -250,9 +250,9 @@ class Post {
     /**
      * Set category
      *
-     * @param Application\BlogBundle\Entity\Category $category
+     * @param Bundle\BlogBundle\Entity\Category $category
      */
-    public function setCategory(\Application\BlogBundle\Entity\Category $category)
+    public function setCategory(\Bundle\BlogBundle\Entity\Category $category)
     {
         $this->category = $category;
     }
@@ -260,7 +260,7 @@ class Post {
     /**
      * Get category
      *
-     * @return Application\BlogBundle\Entity\Category $category
+     * @return Bundle\BlogBundle\Entity\Category $category
      */
     public function getCategory()
     {
@@ -269,9 +269,9 @@ class Post {
     /**
      * Add tags
      *
-     * @param Application\BlogBundle\Entity\Tag $tags
+     * @param Bundle\BlogBundle\Entity\Tag $tags
      */
-    public function addTags(\Application\BlogBundle\Entity\Tag $tags)
+    public function addTags(\Bundle\BlogBundle\Entity\Tag $tags)
     {
         $this->tags[] = $tags;
     }
@@ -288,9 +288,9 @@ class Post {
     /**
      * Add comments
      *
-     * @param Application\BlogBundle\Entity\Comment $comments
+     * @param Bundle\BlogBundle\Entity\Comment $comments
      */
-    public function addComments(\Application\BlogBundle\Entity\Comment $comments)
+    public function addComments(\Bundle\BlogBundle\Entity\Comment $comments)
     {
         if ($comments->getPost() == null) {
             $comments->setPost($this);
