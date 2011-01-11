@@ -33,9 +33,7 @@ and add the relative line in the AppKernel.php
             );
         }
 
-4) Publish assets from both the bundles.
-
-    From the route of your project:
+4) Publish assets from both the bundles. From the route of your project:
 
     $ ./app/console publish:assets --symlink web/
 
