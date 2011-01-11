@@ -1,5 +1,6 @@
+------------
 Installation
-============
+------------
 
 1) Add this bundle as a git submodule with:
 
@@ -46,18 +47,21 @@ and add the relative line in the AppKernel.php
         // ...
     </head>
 
-6) In your main routing file add:
+6) In your main routing file add the reference to the blog specific routings:
 
     //app/config/routing.yml
     blog:
         resource: BlogBundle/Resources/config/routing.yml
 
+---------
 that's it
 ---------
 
     Now, in your browser, go to http://foo.bar/blog
 
-    Main features:
+Main features:
+
+
     - twig templates with blueprint css framework (just because I'm lazy)
     - doctrine2 with annotations
     - 4 model classes (post, category, tag and comment)
