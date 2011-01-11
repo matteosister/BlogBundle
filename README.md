@@ -57,15 +57,15 @@ and add the relative line in the AppKernel.php
 that's it
 ---------
 
-    Now, in your browser, go to http://foo.bar/blog
+Now, in your browser, go to http://foo.bar/blog
 
 Main features:
 
 
-    - twig templates with blueprint css framework (just because I'm lazy)
-    - doctrine2 with annotations
-    - 4 model classes (post, category, tag and comment)
-    - fixtures to load dummy data
+    * twig templates with blueprint css framework (just because I'm lazy)
+    * doctrine2 with annotations
+    * 4 model classes (post, category, tag and comment)
+    * fixtures to load dummy data
 
-    TODO:
+TODO:
     - so many things....but this is just for fun!
