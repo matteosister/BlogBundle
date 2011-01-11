@@ -8,10 +8,24 @@ use Doctrine\ORM\Query;
 
 class BlogController extends Controller
 {
+    private $em;
+
+    private function getEm()
+    {
+        if (null == $this->em) {
+            $this->em = $this->get('doctrine.orm.entity_manager');
+        }
+        return $this->em;
+    }
+
+    /**
+     * @route: blog_home
+     * Homepage controller
+     */
     public function homeAction()
     {
-        // entity manager and query builder objects
-        $em = $this->get('doctrine.orm.entity_manager');
+        // entity manager
+        $em = $this->getEm();
         
         $qb = new QueryBuilder($em);
         // dql query
@@ -36,10 +50,15 @@ class BlogController extends Controller
         ));
     }
 
+    /**
+     * @route: blog_post
+     * @param string $slug
+     * Single post Controller
+     */
     public function postAction($slug)
     {
         // entity manager and query builder objects
-        $em = $this->get('doctrine.orm.entity_manager');
+        $em = $this->getEm();
 
         $query = new Query($em);
         $query->setDQL(
@@ -55,5 +74,14 @@ class BlogController extends Controller
         return $this->render('BlogBundle:Blog:post.twig', array(
             'post' => $posts[0]
         ));
+    }
+
+    /**
+     * @route: blog_categories
+     * Categories Controller
+     */
+    public function categoriesAction()
+    {
+        
     }
 }

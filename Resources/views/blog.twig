@@ -15,13 +15,21 @@
 
 {% block body %}
     <div id="wrapper" class="blogbundle container">
-        <div id="main-menu" class="span-24 last append-bottom prepend-top">
-            <ul>
-                <li class="first selected"><a class="button blue" href="{{ path('blog_home') }}">Home</a></li>
-                <li><a class="button orange" href="#">Categories</a></li>
-                <li class="last"><a class="button orange" href="#">Tags</a></li>
-            </ul>
-        </div>
+        {% block menu %}
+            <div id="main-menu" class="span-24 last append-bottom prepend-top">
+                <ul>
+                    <li class="first">
+                        <a class="button {{ selected == 'homepage' ? 'blue' : 'orange' }}" href="{{ path('blog_home') }}">Home</a>
+                    </li>
+                    <li>
+                        <a class="button {{ selected == 'categories' ? 'blue' : 'orange' }}" href="{{ path('blog_categories') }}">Categories</a>
+                    </li>
+                    <li class="last">
+                        <a class="button {{ selected == 'tags' ? 'blue' : 'orange' }}" href="#">Tags</a>
+                    </li>
+                </ul>
+            </div>
+        {% endblock %}
         <h1 class="span-24 last append-bottom">Blog</h1>
         {% block content %}{% endblock %}
         {% block sidebar %}{% endblock %}

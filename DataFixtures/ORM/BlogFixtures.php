@@ -82,7 +82,7 @@ class BlogFixtures implements FixtureInterface {
     private function generateRandomPost($num)
     {
         $post = new Post();
-        $post->setTitle('Hello World '.rand(1,10000).'!');
+        $post->setTitle('Hello World, ant this is a very log title, so long that in fact is impossible to have something like this in a real world case '.rand(1,10000).'!');
         $post->setAbstract($this->generateLoremIpsum());
         $post->setTheText($this->generateLoremIpsum(5));
         $post->setDate(new DateTime('2011-01-'.rand(1,31)));
