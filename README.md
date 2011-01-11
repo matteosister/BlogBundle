@@ -1,11 +1,11 @@
 Installation
 ============
 
-#) Add this bundle as a git submodule with:
+1) Add this bundle as a git submodule with:
 
 $ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/BlogBundle
 
-#) Add this bundle to your application's kernel file:
+2) Add this bundle to your application's kernel file:
 
 //app/ApplicationKernel.php
 public function registerBundles()
@@ -17,7 +17,7 @@ public function registerBundles()
     );
 }
 
-#) If you have already the BluePrintBundle skip this step. If not add also that bundle as a submodule in your project
+3) If you have already the BluePrintBundle skip this step. If not add also that bundle as a submodule in your project
 
 $ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bundle/BluePrintBundle
 
@@ -33,13 +33,13 @@ public function registerBundles()
     );
 }
 
-#) Publish assets from both the bundles.
+4) Publish assets from both the bundles.
 
 From the route of your project:
 
 $ ./app/console publish:assets --symlink web/
 
-#) add a block named header in the <head> section of your main template file:
+5) add a block named header in the <head> section of your main template file:
 
 //app/views/layout.twig
 // ...
@@ -50,7 +50,7 @@ $ ./app/console publish:assets --symlink web/
 </head>
 // ...
 
-#) In your main routing file add:
+6) In your main routing file add:
 
 app/config/routing.yml
 ----------------------
