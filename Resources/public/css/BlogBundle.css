@@ -36,12 +36,14 @@
 }
 
 .blogbundle h2.post-title {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
 .blogbundle h2.post-title a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
 .blogbundle h2.post-title a:hover {
@@ -166,4 +168,12 @@
 }
 .blogbundle .post-preview .date div.month {
     font-size: 1.3em;
+}
+
+.blogbundle .post .social {
+    height: 35px;
+}
+
+.blogbundle .post .social .addthis_toolbox {
+    float: right;
 }
