@@ -53,6 +53,21 @@ and add the relative line in the AppKernel.php
     blog:
         resource: BlogBundle/Resources/config/routing.yml
 
+7) rebuild the model
+
+    $ ./app/console doctrine:generate:entities
+    $ ./app/console doctrine:generate:proxies
+    $ ./app/console doctrine:generate:repositories
+
+8) update your schema
+
+    $ (if you want to see the queries) ./app/console doctrine:schema:update --dump-sql
+    $ ./app/console doctrine:schema:update --force
+
+9) insert fixtures to have some data to play with
+
+    $ ./app/console doctrine:data:load
+
 ---------
 that's it
 ---------
