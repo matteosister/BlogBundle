@@ -21,7 +21,7 @@ Installation
 
     $ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bundle/BluePrintBundle
 
-    and add the relative line in the AppKernel.php
+and add the relative line in the AppKernel.php
 
     //app/ApplicationKernel.php
         public function registerBundles()
