@@ -6,7 +6,7 @@ Installation
 
     $ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/BlogBundle
 
-2) Add this bundle to your application's kernel file:
+2) Add this bundle to your application's *kernel file*:
 
     //app/ApplicationKernel.php
     public function registerBundles()
@@ -18,7 +18,7 @@ Installation
         );
     }
 
-3) If you have already the BluePrintBundle skip this step. If not add also that bundle as a submodule in your project
+3) If you have already the *BluePrintBundle* skip this step. If not add also that bundle as a submodule in your project
 
     $ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bundle/BluePrintBundle
 
@@ -34,11 +34,11 @@ and add the relative line in the AppKernel.php
             );
         }
 
-4) Publish assets from both the bundles. From the route of your project:
+4) Publish assets from both the bundles. From the root of your project:
 
     $ ./app/console publish:assets --symlink web/
 
-5) add a block named header in the \<head\> section of your main template file:
+5) add a *block named header* in the \<head\> section of your main template file:
 
     //app/views/layout.twig
     <head>
@@ -47,24 +47,24 @@ and add the relative line in the AppKernel.php
         // ...
     </head>
 
-6) In your main routing file add the reference to the blog specific routings:
+6) In your main routing file add the reference to the blog specific *routings*:
 
     //app/config/routing.yml
     blog:
         resource: BlogBundle/Resources/config/routing.yml
 
-7) rebuild the model
+7) *rebuild the model*
 
     $ ./app/console doctrine:generate:entities
     $ ./app/console doctrine:generate:proxies
     $ ./app/console doctrine:generate:repositories
 
-8) update your schema
+8) *update your schema*
 
     $ (if you want to see the queries) ./app/console doctrine:schema:update --dump-sql
     $ ./app/console doctrine:schema:update --force
 
-9) insert fixtures to have some data to play with
+9) insert *fixtures* to have some data to play with
 
     $ ./app/console doctrine:data:load
 
@@ -78,9 +78,8 @@ Main features:
 
 
     * twig templates with blueprint css framework (just because I'm lazy)
-    * doctrine2 with annotations
+    * doctrine2 with *annotations*
     * 4 model classes (post, category, tag and comment)
-    * fixtures to load dummy data
 
 TODO:
-    - so many things....but this is just for fun!
+    - so many things....but this is *just for fun!*
