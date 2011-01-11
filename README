@@ -7,9 +7,7 @@ $ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/Blog
 
 #) Add this bundle to your application's kernel file:
 
-app/ApplicationKernel.php
--------------------------
-
+//app/ApplicationKernel.php
 public function registerBundles()
 {
     return array(
@@ -25,9 +23,7 @@ $ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bu
 
 and add the relative line in the AppKernel.php
 
-app/ApplicationKernel.php
--------------------------
-
+//app/ApplicationKernel.php
 public function registerBundles()
 {
     return array(
@@ -45,9 +41,7 @@ $ ./app/console publish:assets --symlink web/
 
 #) add a block named header in the <head> section of your main template file:
 
-app/views/layout.twig
----------------------
-
+//app/views/layout.twig
 // ...
 <head>
     // ...
