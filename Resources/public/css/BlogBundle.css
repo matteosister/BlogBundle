@@ -64,25 +64,18 @@
 .blogbundle #main-menu ul li a {
     font-family: 'Ubuntu', verdana, arial, serif;
     font-size: 1.2em;
-    color: #EEE;
+    color: #FFF;
     text-decoration: none;
     padding: 5px 10px;
-    background-color: #333;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
 .blogbundle #main-menu ul li a:hover {
-    background-color: #999;
-    color: #000;
-    text-decoration: underline;
 }
 .blogbundle #main-menu ul li.selected a {
-    background-color: #1B62DF;
 }
 .blogbundle #main-menu ul li.selected a:hover {
-    color: #FFF;
-    text-decoration: underline;
 }
 
 .blogbundle #main-menu ul li {

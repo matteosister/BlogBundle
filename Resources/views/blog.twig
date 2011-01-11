@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="/bundles/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/css/blueprint-plugins/sprites/sprite.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/bundles/blog/css/BlogBundle.css" />
+    <link rel="stylesheet" href="/bundles/blog/css/zardi/buttons.css" />
 {% endblock %}
 
 {% block body %}
     <div id="wrapper" class="blogbundle container">
         <div id="main-menu" class="span-24 last append-bottom prepend-top">
             <ul>
-                <li class="first selected"><a href="{{ path('blog_home') }}">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li class="last"><a href="#">Tags</a></li>
+                <li class="first selected"><a class="button blue" href="{{ path('blog_home') }}">Home</a></li>
+                <li><a class="button orange" href="#">Categories</a></li>
+                <li class="last"><a class="button orange" href="#">Tags</a></li>
             </ul>
         </div>
         <h1 class="span-24 last append-bottom">Blog</h1>
