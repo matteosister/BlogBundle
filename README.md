@@ -8,66 +8,78 @@ Installation
 
 2) Add this bundle to your application's **kernel file**:
 
-    //app/ApplicationKernel.php
-    public function registerBundles()
-    {
-        return array(
-            // ...
-            new Bundle\BlogBundle\BlogBundle(),
-            // ...
-        );
-    }
+``
+//app/ApplicationKernel.php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Bundle\BlogBundle\BlogBundle(),
+        // ...
+    );
+}
+``
 
 3) If you have already the **BluePrintBundle** (http://symfony2bundles.org/sonata-project/BluePrintBundle) skip this step.
 If not add also that bundle as a submodule in your project
 
-    $ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bundle/BluePrintBundle
+``$ git submodule add https://github.com/sonata-project/BluePrintBundle.git src/Bundle/BluePrintBundle``
 
 and add the relative line in the AppKernel.php
 
-    //app/ApplicationKernel.php
-        public function registerBundles()
-        {
-            return array(
-                // ...
-                new Bundle\BluePrintBundle\BluePrintBundle(),
-                // ...
-            );
-        }
+``
+//app/ApplicationKernel.php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Bundle\BluePrintBundle\BluePrintBundle(),
+        // ...
+    );
+}
+``
 
 4) Publish assets from both the bundles. From the root of your project:
 
-    $ ./app/console publish:assets --symlink web/
+``$ ./app/console publish:assets --symlink web/``
 
 5) add a **block named header** in the \<head\> section of your main template file:
 
-    //app/views/layout.twig
-    <head>
-        // ...
-        {% block header %}{% endblock %}
-        // ...
-    </head>
+``
+//app/views/layout.twig
+<head>
+    // ...
+    {% block header %}{% endblock %}
+    // ...
+</head>
+``
 
 6) In your main routing file add the reference to the blog specific **routings**:
 
-    //app/config/routing.yml
-    blog:
-        resource: BlogBundle/Resources/config/routing.yml
+``
+//app/config/routing.yml
+blog:
+    resource: BlogBundle/Resources/config/routing.yml
+``
 
 7) **rebuild the model**
 
-    $ ./app/console doctrine:generate:entities
-    $ ./app/console doctrine:generate:proxies
-    $ ./app/console doctrine:generate:repositories
+``
+$ ./app/console doctrine:generate:entities
+$ ./app/console doctrine:generate:proxies
+$ ./app/console doctrine:generate:repositories
+``
 
 8) **update your schema**
 
-    $ (if you want to see the queries) ./app/console doctrine:schema:update --dump-sql
-    $ ./app/console doctrine:schema:update --force
+``
+$ (if you want to see the queries) ./app/console doctrine:schema:update --dump-sql
+$ ./app/console doctrine:schema:update --force
+``
 
 9) insert **fixtures** to have some data to play with
 
-    $ ./app/console doctrine:data:load
+``$ ./app/console doctrine:data:load``
 
 ---------
 that's it
