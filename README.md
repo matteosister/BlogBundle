@@ -70,8 +70,6 @@ and add the relative line in the AppKernel.php
     $ ./app/console doctrine:data:load
 
 ---------
-that's it
----------
 
 Now, in your browser, go to http://foo.bar/blog
 
