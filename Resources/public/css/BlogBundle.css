@@ -32,6 +32,17 @@
     font-family: 'Ubuntu', verdana, arial, serif;
 }
 
+.blogbundle h1 {
+    color: #333;
+}
+.blogbundle h1 a {
+    text-decoration: none;
+    color: #333;
+}
+.blogbundle h1 a:hover {
+    color: #666;
+}
+
 .blogbundle p.abstract {
 }
 

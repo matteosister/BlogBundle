@@ -4,7 +4,7 @@ blog_home:
         _controller: BlogBundle:Blog:home
 
 blog_post:
-    pattern:  /blog/:slug
+    pattern:  /blog/post/:slug
     defaults:
         _controller: BlogBundle:Blog:post
 
@@ -12,6 +12,11 @@ blog_categories:
     pattern:  /blog/categories
     defaults:
         _controller: BlogBundle:Blog:categories
+
+blog_tags:
+    pattern:  /blog/tags
+    defaults:
+        _controller: BlogBundle:Blog:tags
 
 blog_tag:
     pattern:  /blog/tag/:slug

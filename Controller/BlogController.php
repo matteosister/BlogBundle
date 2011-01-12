@@ -5,11 +5,16 @@ namespace Bundle\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Query;
+use Doctrine\ORM\EntityManager;
 
 class BlogController extends Controller
 {
     private $em;
 
+    /**
+     * Retrieve the EntityManager instance
+     * @return \Doctrine\ORM\EntityManager
+     */
     private function getEm()
     {
         if (null == $this->em) {
@@ -59,6 +64,7 @@ class BlogController extends Controller
     {
         // entity manager and query builder objects
         $em = $this->getEm();
+        
 
         $query = new Query($em);
         $query->setDQL(
@@ -82,6 +88,35 @@ class BlogController extends Controller
      */
     public function categoriesAction()
     {
-        
+        $em = $this->getEm();
+        $query = new Query($em);
+        $query->setDQL(
+            'SELECT c
+                FROM Bundle\BlogBundle\Entity\Category c'
+        );
+        $categories = $query->getResult();
+
+        return $this->render('BlogBundle:Blog:categories.twig', array(
+            'categories' => $categories
+        ));
+    }
+
+    /**
+     * @route: blog_tags
+     * Tags Controller
+     */
+    public function tagsAction()
+    {
+        $em = $this->getEm();
+        $query = new Query($em);
+        $query->setDQL(
+            'SELECT t
+                FROM Bundle\BlogBundle\Entity\Tag t'
+        );
+        $tags = $query->getResult();
+
+        return $this->render('BlogBundle:Blog:tags.twig', array(
+            'tags' => $tags
+        ));
     }
 }

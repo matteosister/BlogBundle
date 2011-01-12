@@ -1,0 +1,14 @@
+{% extends "BlogBundle::blog.twig" %}
+
+{% block title %}{{ parent() }} :: Categories{% endblock %}
+
+{% block menu %}
+    {% set selected = 'tags' %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    {% for tag in tags %}
+        <h2>{{ tag }}</h2>
+    {% endfor %}
+{% endblock %}

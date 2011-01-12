@@ -25,12 +25,12 @@
                         <a class="button {{ selected == 'categories' ? 'blue' : 'orange' }}" href="{{ path('blog_categories') }}">Categories</a>
                     </li>
                     <li class="last">
-                        <a class="button {{ selected == 'tags' ? 'blue' : 'orange' }}" href="#">Tags</a>
+                        <a class="button {{ selected == 'tags' ? 'blue' : 'orange' }}" href="{{ path('blog_tags') }}">Tags</a>
                     </li>
                 </ul>
             </div>
         {% endblock %}
-        <h1 class="span-24 last append-bottom">Blog</h1>
+        <h1 class="span-24 last append-bottom"><a href="{{ path('blog_home') }}">Blog</a></h1>
         {% block content %}{% endblock %}
         {% block sidebar %}{% endblock %}
     </div>

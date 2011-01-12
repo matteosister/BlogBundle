@@ -9,6 +9,13 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 class BlogBundle extends Bundle
 {
     /**
+     * Boots the Bundle.
+     */
+    public function boot()
+    {
+        parent::boot();
+    }
+    /**
     * Generatore di url
     *
     * @param string $text
