@@ -4,7 +4,7 @@ Installation
 
 1) Add this bundle as a git submodule with:
 
-    $ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/BlogBundle
+``$ git submodule add git://github.com/matteosister/BlogBundle.git src/Bundle/BlogBundle``
 
 2) Add this bundle to your application's **kernel file**:
 
