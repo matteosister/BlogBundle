@@ -46,6 +46,7 @@ class Post {
 
     /**
      * @orm:ManyToOne(targetEntity="Category", inversedBy="posts", cascade={"all"})
+     * @orm:JoinColumn(onDelete="cascade", onUpdate="cascade")
      */
     private $category;
 
