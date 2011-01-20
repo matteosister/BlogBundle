@@ -13,6 +13,11 @@ blog_categories:
     defaults:
         _controller: BlogBundle:Blog:categories
 
+blog_category:
+    pattern:  /blog/category/:slug
+    defaults:
+        _controller: BlogBundle:Blog:category
+
 blog_tags:
     pattern:  /blog/tags
     defaults:

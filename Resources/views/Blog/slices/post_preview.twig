@@ -1,5 +1,7 @@
 <div class="post-preview">
-    <h4 class="category quiet">{{ post.category }}</h4>
+    <h4 class="category quiet">
+        <a href="{{ path('blog_category', { 'slug': post.category.slug }) }}">{{ post.category }}</a>
+    </h4>
     
     <h2 class="post-title">
         <a href="{{ path('blog_post', {'slug': post.slug }) }}" title="go to {{ post }} post">{{ post }}</a>

@@ -21,7 +21,7 @@ class BlogFixtures implements FixtureInterface {
     public function load($manager)
     {
         $this->generatePosts();
-
+        if ($this->objects == null) return;
         foreach($this->objects as $object)
             $manager->persist($object);
     }

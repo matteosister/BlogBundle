@@ -8,6 +8,7 @@
 namespace Bundle\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Bundle\BlogBundle\BlogBundle;
 
 /**
  * @orm:Entity
@@ -22,9 +23,14 @@ class Category {
     private $id;
 
     /**
-     * @orm:Column
+     * @orm:Column(unique="true")
      */
     private $name;
+
+    /**
+     * @orm:Column
+     */
+    private $slug;
 
     /**
      * @orm:OneToMany(targetEntity="Post", mappedBy="category")
@@ -58,6 +64,9 @@ class Category {
      */
     public function setName($name)
     {
+        if (null === $this->slug) {
+            $this->slug = BlogBundle::slugify($name);
+        }
         $this->name = $name;
     }
 
@@ -89,5 +98,24 @@ class Category {
     public function getPosts()
     {
         return $this->posts;
+    }
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string $slug
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

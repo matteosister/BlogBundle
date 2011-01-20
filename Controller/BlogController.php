@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityRepository;
 
 class BlogController extends Controller
 {
@@ -99,6 +100,15 @@ class BlogController extends Controller
         return $this->render('BlogBundle:Blog:categories.twig', array(
             'categories' => $categories
         ));
+    }
+
+
+    public function categoryAction($slug)
+    {
+        $em = $this->getEm();
+        $repo = new EntityRepository($em, 'Bundle\BlogBundle\Entity\Category');
+        $category = $repo->findBy(array('slug' => $slug));
+        var_dump($category);
     }
 
     /**

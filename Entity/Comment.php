@@ -40,6 +40,7 @@ class Comment {
 
     /**
      * @orm:ManyToOne(targetEntity="post", inversedBy="comments")
+     * @orm:JoinColumn(onDelete="cascade", onUpdate="cascade")
      */
     private $post;
 
@@ -50,7 +51,7 @@ class Comment {
 
     /**
      * @orm:ManyToOne(targetEntity="Comment", inversedBy="children")
-     * @JoinColumn(name="parent_id", referencedColumnName="id")
+     * @orm:JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade", onUpdate="cascade")
      */
     private $parent;
 
