@@ -51,7 +51,11 @@ class Comment {
 
     /**
      * @orm:ManyToOne(targetEntity="Comment", inversedBy="children")
+<<<<<<< HEAD
      * @orm:JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade", onUpdate="cascade")
+=======
+     * @orm:JoinColumn(onDelete="cascade", onUpdate="cascade")
+>>>>>>> 6afa7354a8d99c953814cc0e1d04863033197eac
      */
     private $parent;
 
