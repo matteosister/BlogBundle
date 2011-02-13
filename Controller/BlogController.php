@@ -115,7 +115,8 @@ class BlogController extends Controller
         $category = $query->getSingleResult();
 
         return $this->render('BlogBundle:Blog:category.html.twig', array(
-            'category' => $category
+            'category' => $category,
+            'posts'    => $category->getPosts()
         ));
     }
 
@@ -135,6 +136,30 @@ class BlogController extends Controller
 
         return $this->render('BlogBundle:Blog:tags.html.twig', array(
             'tags' => $tags
+        ));
+    }
+
+
+    /**
+     * @route: blog_tag
+     * Tag Controller
+     */
+    public function tagAction($slug)
+    {
+        $em = $this->getEm();
+        $query = new Query($em);
+        $query->setDQL(
+            'SELECT t
+                FROM Bundle\BlogBundle\Entity\Tag t WHERE t.slug = ?1'
+        );
+        $query->setParameter(1, $slug);
+        $tag = $query->getSingleResult();
+
+        
+
+        return $this->render('BlogBundle:Blog:tag.html.twig', array(
+            'tag' => $tag,
+            'posts' => $tag->getPosts()
         ));
     }
 }

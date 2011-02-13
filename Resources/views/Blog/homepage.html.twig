@@ -21,7 +21,9 @@
         <h3 class="caps">categorie</h3>
         <ul>
         {% for category in categories %}
-            <li class="quiet">{{ category }} ({{ category.posts|length }})</li>
+            <li class="quiet">
+                <a href="{{ path('blog_category', { 'slug': category.slug }) }}">{{ category }}</a> ({{ category.posts|length }})
+            </li>
         {% endfor %}
         </ul>
     </div>
@@ -29,7 +31,9 @@
         <h3 class="caps">tags</h3>
         <ul>
         {% for tag in tags %}
-            <li class="quiet">{{ tag }} ({{ tag.posts|length }})</li>
+            <li class="quiet">
+                <a href="{{ path('blog_tag', { 'slug': tag.slug }) }}">{{ tag }}</a> ({{ tag.posts|length }})
+            </li>
         {% endfor %}
         </ul>
     </div>

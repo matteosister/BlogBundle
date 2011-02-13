@@ -9,21 +9,20 @@
 
 {% block content %}
     <div class="post span-18">
-        <div class="social append-bottom">
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-            <a class="addthis_button_preferred_4"></a>
-            <a class="addthis_button_compact"></a>
-            </div>
-            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d2cd1195b33ee72"></script>
-            <!-- AddThis Button END -->
-        </div>
+        {% include 'BlogBundle:Blog:slices/social_bar.html.twig' %}
         <div class="the-post">
+            <h4 class="category quiet">
+                <a href="{{ path('blog_category', { 'slug': post.category.slug }) }}">{{ post.category }}</a>
+            </h4>
             <h2 class="post-title">{{ post }}</h2>
             <p>{{ post.theText }}</p>
+            <ul class="tag-list">
+            {% for tag in post.tags %}
+                <li class="quiet {{ loop.first ? 'first' : '' }} {{ loop.last ? 'last' : '' }}">
+                    <a href="{{ path('blog_tag', { 'slug': tag.slug }) }}">{{ tag }}</a>
+                </li>
+            {% endfor %}
+            </ul>
         </div>
         <div class="comments">
             <h4 class="quiet">Comments</h4>

@@ -1,13 +1,13 @@
 {% extends "BlogBundle::blog.html.twig" %}
 
-{% block title %}{{ category }} :: {{ parent() }}{% endblock %}
+{% block title %}{{ tag }} :: {{ parent() }}{% endblock %}
 
 {% block menu %}
-    {% set selected = 'categories' %}
+    {% set selected = 'tags' %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
-    <h2>Posts with <em>{{ category }}</em> category</h2>
+    <h2>Posts with <em>{{ tag }}</em> tag</h2>
     {% include 'BlogBundle:Blog:slices/post_list.html.twig' %}
 {% endblock %}

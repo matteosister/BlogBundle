@@ -1,0 +1,4 @@
+{% for post in posts %}
+  {% include 'BlogBundle:Blog:slices/post_preview.html.twig' %}
+  {% if not loop.last %}<hr />{% endif %}
+{% endfor %}
