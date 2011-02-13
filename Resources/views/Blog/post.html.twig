@@ -1,6 +1,6 @@
 {% extends "BlogBundle::blog.html.twig" %}
 
-{% block title %}{{ parent() }} :: {{ post }}{% endblock %}
+{% block title %}{{ post }} :: {{ parent() }}{% endblock %}
 
 {% block menu %}
     {% set selected = '' %}
