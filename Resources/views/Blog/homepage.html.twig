@@ -1,4 +1,4 @@
-{% extends "BlogBundle::blog.twig" %}
+{% extends "BlogBundle::blog.html.twig" %}
 
 {% block title %}{{ parent() }} :: Homepage{% endblock %}
 
@@ -10,7 +10,7 @@
 {% block content %}
     <div class="posts span-18">
         {% for post in posts %}
-            {% include 'BlogBundle:Blog:slices/post_preview.twig' %}
+            {% include 'BlogBundle:Blog:slices/post_preview.html.twig' %}
             {% if not loop.last %}<hr />{% endif %}
         {% endfor %}
     </div>

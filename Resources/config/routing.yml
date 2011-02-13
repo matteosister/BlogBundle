@@ -14,7 +14,7 @@ blog_categories:
         _controller: BlogBundle:Blog:categories
 
 blog_category:
-    pattern:  /blog/category/:slug
+    pattern:  /blog/category/{slug}
     defaults:
         _controller: BlogBundle:Blog:category
 

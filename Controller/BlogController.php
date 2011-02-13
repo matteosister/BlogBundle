@@ -49,7 +49,7 @@ class BlogController extends Controller
         $query = $em->createQuery('SELECT t,p FROM Bundle\BlogBundle\Entity\Tag t JOIN t.posts p');
         $tags = $query->getResult();
 
-        return $this->render('BlogBundle:Blog:homepage.twig', array(
+        return $this->render('BlogBundle:Blog:homepage.html.twig', array(
             'posts' => $posts,
             'categories' => $categories,
             'tags' => $tags
@@ -78,7 +78,7 @@ class BlogController extends Controller
         $posts = $query->getResult();
 
 
-        return $this->render('BlogBundle:Blog:post.twig', array(
+        return $this->render('BlogBundle:Blog:post.html.twig', array(
             'post' => $posts[0]
         ));
     }
@@ -97,7 +97,7 @@ class BlogController extends Controller
         );
         $categories = $query->getResult();
 
-        return $this->render('BlogBundle:Blog:categories.twig', array(
+        return $this->render('BlogBundle:Blog:categories.html.twig', array(
             'categories' => $categories
         ));
     }
@@ -106,9 +106,17 @@ class BlogController extends Controller
     public function categoryAction($slug)
     {
         $em = $this->getEm();
-        $repo = new EntityRepository($em, 'Bundle\BlogBundle\Entity\Category');
-        $category = $repo->findBy(array('slug' => $slug));
-        var_dump($category);
+        $query = new Query($em);
+        $query->setDQL(
+            'SELECT c
+                FROM Bundle\BlogBundle\Entity\Category c WHERE c.slug = ?1'
+        );
+        $query->setParameter(1, $slug);
+        $category = $query->getSingleResult();
+
+        return $this->render('BlogBundle:Blog:category.html.twig', array(
+            'category' => $category
+        ));
     }
 
     /**
@@ -125,7 +133,7 @@ class BlogController extends Controller
         );
         $tags = $query->getResult();
 
-        return $this->render('BlogBundle:Blog:tags.twig', array(
+        return $this->render('BlogBundle:Blog:tags.html.twig', array(
             'tags' => $tags
         ));
     }
