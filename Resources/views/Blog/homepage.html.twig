@@ -1,4 +1,4 @@
-{% extends "BlogBundle::blog.html.twig" %}
+{% extends "CypressBlogBundle::blog.html.twig" %}
 
 {% block title %}Homepage :: {{ parent() }}{% endblock %}
 
@@ -10,7 +10,7 @@
 {% block content %}
     <div class="posts span-18">
         {% for post in posts %}
-            {% include 'BlogBundle:Blog:slices/post_preview.html.twig' %}
+            {% include 'CypressBlogBundle:Blog:slices/post_preview.html.twig' %}
             {% if not loop.last %}<hr />{% endif %}
         {% endfor %}
     </div>

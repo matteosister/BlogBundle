@@ -5,74 +5,74 @@
  *  Just for fun...
  */
 
-namespace Bundle\BlogBundle\Entity;
+namespace Cypress\BlogBundle\Entity;
 
-use Bundle\BlogBundle\BlogBundle;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity
- * @orm:Table(name="blog_posts")
- * @orm:HasLifecycleCallbacks
+ * @ORM\Entity
+ * @ORM\Table(name="blog_posts")
+ * @ORM\HasLifecycleCallbacks
  */
 class Post {
 
     /**
-     * @orm:Column(type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @orm:Column(unique="true")
+     * @ORM\Column(unique="true")
      */
     private $title;
 
     /**
-     * @orm:Column(type="string", length="1000", name="testo_abstract")
+     * @ORM\Column(type="string", length="1000", name="testo_abstract")
      */
     private $abstract;
 
     /**
-     * @orm:Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
     /**
-     * @orm:Column(type="text", name="the_text")
+     * @ORM\Column(type="text", name="the_text")
      */
     private $theText;
 
     /**
-     * @orm:ManyToOne(targetEntity="Category", inversedBy="posts", cascade={"all"})
-     * @orm:JoinColumn(onDelete="cascade", onUpdate="cascade")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="posts", cascade={"all"})
+     * @ORM\JoinColumn(onDelete="cascade", onUpdate="cascade")
      */
     private $category;
 
     /**
-     * @orm:ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"all"})
-     * @orm:JoinTable(name="blog_post_tag")
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"all"})
+     * @ORM\JoinTable(name="blog_post_tag")
      */
     private $tags;
 
     /**
-     * @orm:OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"})
      */
     private $comments;
 
     /**
-     * @orm:Column(type="string", unique="true")
+     * @ORM\Column(type="string", unique="true")
      */
     private $slug;
 
     /**
-     * @orm:Column(type="datetime", nullable="true")
+     * @ORM\Column(type="datetime", nullable="true")
      */
     private $created_at;
     
     /**
-     * @orm:Column(type="datetime", nullable="true")
+     * @ORM\Column(type="datetime", nullable="true")
      */
     private $updated_at;
 
@@ -91,7 +91,7 @@ class Post {
     }
 
     /**
-     * @orm:PrePersist
+     * @ORM\PrePersist
      */
     public function updateTimestampable()
     {
@@ -115,9 +115,6 @@ class Post {
      */
     public function setTitle($title)
     {
-        if (null == $this->slug) {
-            $this->slug = BlogBundle::slugify($title);
-        }
         $this->title = $title;
     }
 
@@ -253,7 +250,7 @@ class Post {
      *
      * @param Bundle\BlogBundle\Entity\Category $category
      */
-    public function setCategory(\Bundle\BlogBundle\Entity\Category $category)
+    public function setCategory(Category $category)
     {
         $this->category = $category;
     }
@@ -272,7 +269,7 @@ class Post {
      *
      * @param Bundle\BlogBundle\Entity\Tag $tags
      */
-    public function addTags(\Bundle\BlogBundle\Entity\Tag $tags)
+    public function addTags(Tag $tags)
     {
         $this->tags[] = $tags;
     }
@@ -291,7 +288,7 @@ class Post {
      *
      * @param Bundle\BlogBundle\Entity\Comment $comments
      */
-    public function addComments(\Bundle\BlogBundle\Entity\Comment $comments)
+    public function addComments(Comment $comments)
     {
         if ($comments->getPost() == null) {
             $comments->setPost($this);

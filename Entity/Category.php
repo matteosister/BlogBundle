@@ -5,35 +5,35 @@
  *  Just for fun...
  */
 
-namespace Bundle\BlogBundle\Entity;
+namespace Cypress\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Bundle\BlogBundle\BlogBundle;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity
- * @orm:Table(name="blog_categories")
+ * @ORM\Entity
+ * @ORM\Table(name="blog_categories")
  */
 class Category {
     /**
-     * @orm:Column(type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @orm:Column(unique="true")
+     * @ORM\Column(unique="true")
      */
     private $name;
 
     /**
-     * @orm:Column
+     * @ORM\Column
      */
     private $slug;
 
     /**
-     * @orm:OneToMany(targetEntity="Post", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="category")
      */
     private $posts;
     
@@ -64,9 +64,6 @@ class Category {
      */
     public function setName($name)
     {
-        if (null === $this->slug) {
-            $this->slug = BlogBundle::slugify($name);
-        }
         $this->name = $name;
     }
 

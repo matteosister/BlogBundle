@@ -6,52 +6,53 @@
  */
 
 
-namespace Bundle\BlogBundle\Entity;
+namespace Cypress\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity
- * @orm:Table(name="blog_comments")
+ * @ORM\Entity
+ * @ORM\Table(name="blog_comments")
  */
 class Comment {
 
     /**
-     * @orm:Column(type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @orm:Column(length="50")
+     * @ORM\Column(length="50")
      */
     private $user;
 
     /**
-     * @orm:Column(type="text", name="the_text")
+     * @ORM\Column(type="text", name="the_text")
      */
     private $theText;
 
     /**
-     * @orm:Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
     /**
-     * @orm:ManyToOne(targetEntity="post", inversedBy="comments")
-     * @orm:JoinColumn(onDelete="cascade", onUpdate="cascade")
+     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments")
+     * @ORM\JoinColumn(onDelete="cascade", onUpdate="cascade")
      */
     private $post;
 
     /**
-     * @orm:OneToMany(targetEntity="Comment", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="parent")
      */
     private $children;
 
     /**
-     * @orm:ManyToOne(targetEntity="Comment", inversedBy="children")
-     * @orm:JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade", onUpdate="cascade")
+     * @ORM\ManyToOne(targetEntity="Comment", inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade", onUpdate="cascade")
      */
     private $parent;
 
@@ -92,9 +93,9 @@ class Comment {
     /**
      * Add children
      *
-     * @param Bundle\BlogBundle\Entity\Comment $children
+     * @param Cypress\BlogBundle\Entity\Comment $children
      */
-    public function addChildren(\Bundle\BlogBundle\Entity\Comment $children)
+    public function addChildren(\Cypress\BlogBundle\Entity\Comment $children)
     {
         $this->children[] = $children;
     }
@@ -111,9 +112,9 @@ class Comment {
     /**
      * Set post
      *
-     * @param Bundle\BlogBundle\Entity\post $post
+     * @param Cypress\BlogBundle\Entity\Post $post
      */
-    public function setPost(\Bundle\BlogBundle\Entity\post $post)
+    public function setPost(Post $post)
     {
         $this->post = $post;
     }
@@ -121,7 +122,7 @@ class Comment {
     /**
      * Get post
      *
-     * @return Bundle\BlogBundle\Entity\post $post
+     * @return Cypress\BlogBundle\Entity\Post $post
      */
     public function getPost()
     {
@@ -131,9 +132,9 @@ class Comment {
     /**
      * Set parent
      *
-     * @param Bundle\BlogBundle\Entity\Comment $parent
+     * @param Cypress\BlogBundle\Entity\Comment $parent
      */
-    public function setParent(\Bundle\BlogBundle\Entity\Comment $parent)
+    public function setParent(Comment $parent)
     {
         $this->parent = $parent;
     }
@@ -141,7 +142,7 @@ class Comment {
     /**
      * Get parent
      *
-     * @return Bundle\BlogBundle\Entity\Comment $parent
+     * @return Cypress\BlogBundle\Entity\Comment $parent
      */
     public function getParent()
     {

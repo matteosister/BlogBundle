@@ -5,35 +5,36 @@
  *  Just for fun...
  */
 
-namespace Bundle\BlogBundle\Entity;
+namespace Cypress\BlogBundle\Entity;
 
-use Bundle\BlogBundle\BlogBundle;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
 
 /**
- * @orm:Entity
- * @orm:Table(name="blog_tags")
+ * @ORM\Entity
+ * @ORM\Table(name="blog_tags")
  */
 class Tag {
     /**
-     * @orm:Column(type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @orm:Column(unique="true")
+     * @ORM\Column(unique="true")
      */
     private $label;
 
     /**
-     * @orm:Column(unique="true")
+     * @ORM\Column(unique="true")
      */
     private $slug;
 
     /**
-     * @orm:ManyToMany(targetEntity="Post", mappedBy="tags")
+     * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
      */
     private $posts;
 
@@ -65,9 +66,6 @@ class Tag {
      */
     public function setLabel($label)
     {
-        if ($this->slug == null) {
-            $this->slug = BlogBundle::slugify($label);
-        }
         $this->label = $label;
     }
 

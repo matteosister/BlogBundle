@@ -5,25 +5,40 @@
  *  Just for fun...
  */
 
+namespace Cypress\BlogBundle\DataFixtures\ORM;
+
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Bundle\BlogBundle\Entity\Post;
-use Bundle\BlogBundle\Entity\Category;
-use Bundle\BlogBundle\Entity\Tag;
-use Bundle\BlogBundle\Entity\Comment;
+use Cypress\BlogBundle\Entity\Post;
+use Cypress\BlogBundle\Entity\Category;
+use Cypress\BlogBundle\Entity\Tag;
+use Cypress\BlogBundle\Entity\Comment;
+use \DateTime;
+use Cypress\BlogBundle\Entity\EntitiesListener;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class BlogFixtures implements FixtureInterface {
-
+class BlogFixtures implements FixtureInterface, ContainerAwareInterface 
+{
+    private $container;
     private $objects;
+    
+    public function setContainer(ContainerInterface $container = null) {
+        $this->container = $container;
+    }
 
     /**
      * fixture load
      */
     public function load($manager)
     {
+        $urlizer = new EntitiesListener($this->container);
+        $manager->getEventManager()->addEventSubscriber($urlizer);
         $this->generatePosts();
         if ($this->objects == null) return;
-        foreach($this->objects as $object)
+        foreach($this->objects as $object) {
             $manager->persist($object);
+        }
+        $manager->flush();
     }
 
     private function generatePosts()
@@ -82,7 +97,7 @@ class BlogFixtures implements FixtureInterface {
     private function generateRandomPost($num)
     {
         $post = new Post();
-        if (rand(1,2) == 1) {
+        if ($num == 1) {
             $post->setTitle('Hello World, ant this is a very log title, so long that in fact is impossible to have something like this in a real world case '.rand(1,10000).'!');
         } else {
             $post->setTitle('The title of the post');
