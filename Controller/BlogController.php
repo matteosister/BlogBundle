@@ -7,16 +7,24 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class BlogController extends Controller
+class BlogController extends ContainerAware
 {
+    protected $container;
+    
+    public function setContainer(ContainerInterface $container = null) {
+        $this->container = $container;
+    }
+    
     /**
      * Retrieve the EntityManager instance
      * @return \Doctrine\ORM\EntityManager
      */
     private function getEm()
     {
-        return $this->get('doctrine.orm.entity_manager');
+        return $this->container->get('doctrine.orm.entity_manager');
     }
 
     /**
@@ -42,8 +50,8 @@ class BlogController extends Controller
 
         $query = $em->createQuery('SELECT t,p FROM CypressBlogBundle:Tag t JOIN t.posts p');
         $tags = $query->getResult();
-
-        return $this->render('CypressBlogBundle:Blog:homepage.html.twig', array(
+        
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:homepage.html.twig', array(
             'posts' => $posts,
             'categories' => $categories,
             'tags' => $tags
@@ -71,7 +79,7 @@ class BlogController extends Controller
         $posts = $query->getResult();
 
 
-        return $this->render('CypressBlogBundle:Blog:post.html.twig', array(
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:post.html.twig', array(
             'post' => $posts[0]
         ));
     }
@@ -89,7 +97,7 @@ class BlogController extends Controller
         );
         $categories = $query->getResult();
 
-        return $this->render('CypressBlogBundle:Blog:categories.html.twig', array(
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:categories.html.twig', array(
             'categories' => $categories
         ));
     }
@@ -106,7 +114,7 @@ class BlogController extends Controller
         $query->setParameter(1, $slug);
         $category = $query->getSingleResult();
 
-        return $this->render('CypressBlogBundle:Blog:category.html.twig', array(
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:category.html.twig', array(
             'category' => $category,
             'posts'    => $category->getPosts()
         ));
@@ -125,7 +133,7 @@ class BlogController extends Controller
         );
         $tags = $query->getResult();
 
-        return $this->render('CypressBlogBundle:Blog:tags.html.twig', array(
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:tags.html.twig', array(
             'tags' => $tags
         ));
     }
@@ -147,7 +155,7 @@ class BlogController extends Controller
 
         
 
-        return $this->render('CypressBlogBundle:Blog:tag.html.twig', array(
+        return $this->container->get('templating')->renderResponse('CypressBlogBundle:Blog:tag.html.twig', array(
             'tag' => $tag,
             'posts' => $tag->getPosts()
         ));

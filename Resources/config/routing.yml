@@ -1,29 +1,23 @@
 blog_home:
     pattern:  /
-    defaults:
-        _controller: CypressBlogBundle:Blog:home
+    defaults: { _controller: cypress_blog.blog_controller:homeAction }
 
 blog_post:
     pattern:  /post/{slug}
-    defaults:
-        _controller: CypressBlogBundle:Blog:post
+    defaults: { _controller: cypress_blog.blog_controller:postAction }
 
 blog_categories:
     pattern:  /categories
-    defaults:
-        _controller: CypressBlogBundle:Blog:categories
+    defaults: { _controller: cypress_blog.blog_controller:categoriesAction }
 
 blog_category:
     pattern:  /category/{slug}
-    defaults:
-        _controller: CypressBlogBundle:Blog:category
+    defaults: { _controller: cypress_blog.blog_controller:categoryAction }
 
 blog_tags:
     pattern:  /tags
-    defaults:
-        _controller: CypressBlogBundle:Blog:tags
+    defaults: { _controller: cypress_blog.blog_controller:tagsAction }
 
 blog_tag:
     pattern:  /tag/{slug}
-    defaults:
-        _controller: CypressBlogBundle:Blog:tag
+    defaults: { _controller: cypress_blog.blog_controller:tagAction }

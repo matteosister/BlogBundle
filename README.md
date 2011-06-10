@@ -26,12 +26,6 @@ Installation
             );
         }
 
-* Import the DI services (see todo)
-    
-        //app/config.yml
-        imports:
-            - { resource: "@CypressBlogBundle/Resources/config/services.xml" }
-
 * If you have already the **BluePrintBundle** (http://symfony2bundles.org/sonata-project/BluePrintBundle) skip this step.
 If not add also that bundle as a submodule in your project
 
@@ -85,6 +79,4 @@ Main features:
     - 4 model classes (post, category, tag and comment)
 
 TODO:
-    - Controller as service
-    - Add DependencyInjection Resource loader
     - So many things....but this is just for fun!
