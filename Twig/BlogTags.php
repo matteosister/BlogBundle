@@ -7,7 +7,7 @@
 
 namespace Cypress\BlogBundle\Twig;
 
-use Cypress\BlogBundle\Twig\BlogTokenParser;
+use Cypress\BlogBundle\Twig\PostsParser;
 
 class BlogTags extends \Twig_Extension
 {
@@ -21,7 +21,7 @@ class BlogTags extends \Twig_Extension
     
     public function getTokenParsers() {
         return array(
-            new BlogTokenParser()
+            new PostsParser()
         );
     }
     
