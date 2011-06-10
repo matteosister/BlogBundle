@@ -8,16 +8,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="posts span-18">
-        {% for post in posts %}
-            {% include 'CypressBlogBundle:Blog:slices/post_preview.html.twig' %}
-            {% if not loop.last %}<hr />{% endif %}
-        {% endfor %}
+    <div class="posts">
+        {% posts %}{% endposts %}
     </div>
 {% endblock %}
 
 {% block sidebar %}
-    <div class="metadata box span-5 last">
+<div class="aside">
+    <div class="metadata box">
         <h3 class="caps">categorie</h3>
         <ul>
         {% for category in categories %}
@@ -27,7 +25,7 @@
         {% endfor %}
         </ul>
     </div>
-    <div class="metadata box span-5 last">
+    <div class="metadata box">
         <h3 class="caps">tags</h3>
         <ul>
         {% for tag in tags %}
@@ -37,8 +35,9 @@
         {% endfor %}
         </ul>
     </div>
-    <div class="metadata box span-5 last">
+    <div class="metadata box">
         <h3 class="caps">last comment</h3>
         <p class="quiet">Lorem ipsum</p>
     </div>
+</div>
 {% endblock %}

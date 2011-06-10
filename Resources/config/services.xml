@@ -11,18 +11,35 @@ Just for fun...
         
     <parameters>
         <parameter key="cypress_blog.controller.class">Cypress\BlogBundle\Controller\BlogController</parameter>
+        <parameter key="cypress_blog.assetic.compass.class">Cypress\BlogBundle\Assetic\Filter\CompassFilter</parameter>
+        <parameter key="cypress_blog.assetic.compass.images_dir">%kernel.root_dir%/../src/Vivacom/CmsBundle/Resources/public/images</parameter>
+        <parameter key="cypress_blog.assetic.compass.http_path">/bundles/cms</parameter>
+        <parameter key="cypress_blog.twig_extension.class">Cypress\BlogBundle\Twig\BlogTags</parameter>
     </parameters>
 
     <services>
         <service id="cypress_blog.urlizer" class="Cypress\BlogBundle\Util\Util"></service>
+        
         <service id="cypress_blog.post_listener" class="Cypress\BlogBundle\Entity\PostListener" public="false">
             <argument type="service" id="service_container" />
         </service>
+        
         <service id="cypress_blog.blog_controller" class="%cypress_blog.controller.class%">
             <call method="setContainer">
                 <argument type="service" id="service_container" />
             </call>
         </service>
+        
+        <service id="cypress_blog.compass_filter" class="%cypress_blog.assetic.compass.class%">
+            <call method="setImagesDir">%cypress_blog.assetic.compass.images_dir%</call>
+            <call method="setHttpPath">%cypress_blog.assetic.compass.http_path%</call>
+            <tag name="assetic.filter"></tag>
+        </service>
+        
+        <service id="cypress_blog.twig.extension" class="%cypress_blog.twig_extension.class%">
+            <tag name="twig.extension" />
+        </service>
+        
     </services>
     
 </container>
