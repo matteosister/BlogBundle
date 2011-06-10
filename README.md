@@ -79,6 +79,7 @@ Main features:
     - 4 model classes (post, category, tag and comment)
 
 TODO:
+    
     - introduce assetic with compass
-    - make this a real bundle and not just a sandbox
+    - make this a real bundle and not just a sandbox :)
     - So many things....but this is just for fun!
