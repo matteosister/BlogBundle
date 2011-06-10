@@ -1,5 +1,5 @@
 Installation
-------------
+============
 
 * Add this bundle as a git submodule with:
 
