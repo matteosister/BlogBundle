@@ -9,7 +9,7 @@
 
 {% block content %}
     <div class="post span-18">
-        {% include 'BlogBundle:Blog:slices/social_bar.html.twig' %}
+        {% include 'CypressBlogBundle:Blog:slices/social_bar.html.twig' %}
         <div class="the-post">
             <h4 class="category quiet">
                 <a href="{{ path('blog_category', { 'slug': post.category.slug }) }}">{{ post.category }}</a>

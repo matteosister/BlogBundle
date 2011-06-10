@@ -9,6 +9,8 @@ namespace Cypress\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Cypress\BlogBundle\Entity\Category;
+use Cypress\BlogBundle\Entity\Comment;
 
 /**
  * @ORM\Entity
@@ -247,8 +249,6 @@ class Post {
     
     /**
      * Set category
-     *
-     * @param Bundle\BlogBundle\Entity\Category $category
      */
     public function setCategory(Category $category)
     {
@@ -257,8 +257,6 @@ class Post {
 
     /**
      * Get category
-     *
-     * @return Bundle\BlogBundle\Entity\Category $category
      */
     public function getCategory()
     {
@@ -266,8 +264,6 @@ class Post {
     }
     /**
      * Add tags
-     *
-     * @param Bundle\BlogBundle\Entity\Tag $tags
      */
     public function addTags(Tag $tags)
     {
@@ -285,8 +281,6 @@ class Post {
     }
     /**
      * Add comments
-     *
-     * @param Bundle\BlogBundle\Entity\Comment $comments
      */
     public function addComments(Comment $comments)
     {
@@ -298,8 +292,6 @@ class Post {
 
     /**
      * Get comments
-     *
-     * @return Doctrine\Common\Collections\Collection $comments
      */
     public function getComments()
     {

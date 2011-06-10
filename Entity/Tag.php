@@ -9,7 +9,7 @@ namespace Cypress\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Cypress\BlogBundle\Entity\Post;
 
 /**
  * @ORM\Entity
@@ -101,10 +101,8 @@ class Tag {
 
     /**
      * Add posts
-     *
-     * @param Bundle\BlogBundle\Entity\Post $posts
      */
-    public function addPosts(\Bundle\BlogBundle\Entity\Post $posts)
+    public function addPosts(Post $posts)
     {
         $this->posts[] = $posts;
     }
