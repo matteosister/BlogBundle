@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Dashboard{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="/bundles/cypressblog/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+            <link href="/bundles/cypressblog/css/print.css" media="print" rel="stylesheet" type="text/css" />
+            <!--[if lt IE 8]>
+                <link href="/bundles/cypressblog/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+            <![endif]-->
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="{% block context %}backend{% endblock %}">
+        <section id="container">
+            {% block menu %}{% endblock %}
+            {% block content %}{% endblock %}
+        </section>
+    </body>
+</html>

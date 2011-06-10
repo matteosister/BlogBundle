@@ -1,0 +1,6 @@
+.main-menu {
+  @include column(4);
+  ul {
+    @include no-bullets;
+  }
+}

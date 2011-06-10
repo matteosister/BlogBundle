@@ -68,6 +68,10 @@
 .blogbundle h4 {
    margin-bottom: 0em;
 }
+.blogbundle #main-menu {
+    overflow: hidden;
+}
+
 .blogbundle #main-menu ul {
     padding-left: 0;
 }

@@ -3,15 +3,19 @@
 {% block title %}BlogBundle :: {{ parent() }}{% endblock %}
 
 {% block stylesheets %}
-    {% stylesheets filter="compass" output="/css/screen.css" 
-        "@CypressBlogBundle/Resources/assets/sass/screen.scss" %}
-        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-    {% endstylesheets %}
+    <link rel="stylesheet" href="/bundles/sonatablueprint/src/reset.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/bundles/sonatablueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/bundles/sonatablueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="/bundles/sonatablueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="/bundles/sonatablueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/css/blueprint-plugins/sprites/sprite.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/bundles/cypressblog/css/BlogBundle.css" />
+    <link rel="stylesheet" href="/bundles/cypressblog/css/zardi/buttons.css" />
 {% endblock %}
 
 {% block body %}
     <div id="wrapper" class="blogbundle container">
-        <div class="header">
+        <div class="header span-24 last">
             {% block menu %}
                 <div id="main-menu">
                     <ul>

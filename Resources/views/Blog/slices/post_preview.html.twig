@@ -26,4 +26,5 @@
     <div>
         <strong class="quiet">{{ post.comments|length }} {{ post.comments|length == 1 ? 'Comment' : 'Comments' }}</strong>
     </div>
+    {% if not loop.last %}<hr />{% endif %}
 </div>

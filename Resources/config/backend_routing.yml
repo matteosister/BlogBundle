@@ -1,0 +1,5 @@
+## YAML Template.
+
+blog_backend_dashboard:
+    pattern: /
+    defaults: { _controller: cypress_blog.backend_controller:dashboardAction }

@@ -8,14 +8,13 @@
 {% endblock %}
 
 {% block content %}
-<h1>posts</h1>
-<div class="posts">
-    posts
+<div class="span-18">
+    {% include 'CypressBlogBundle:Blog:slices/post_list.html.twig' %}
 </div>
 {% endblock %}
 
 {% block sidebar %}
-<div class="aside">
+<div class="aside span-6 last">
     <div class="metadata box">
         <h3 class="caps">categorie</h3>
         <ul>
