@@ -1,5 +1,15 @@
 ## YAML Template.
 
-blog_backend_dashboard:
+blog_be_dashboard:
     pattern: /
     defaults: { _controller: cypress_blog.backend_controller:dashboardAction }
+    
+blog_be_posts:
+    pattern: /posts
+    defaults: { _controller: cypress_blog.backend_controller:postsAction }
+    
+    
+    
+#_demo:
+#    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+#    type:     annotation

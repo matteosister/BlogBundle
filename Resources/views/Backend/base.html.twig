@@ -15,7 +15,20 @@
     </head>
     <body class="{% block context %}backend{% endblock %}">
         <section id="container">
-            {% block menu %}{% endblock %}
+            {% block header %}
+            <section class="header">
+                <h1><a href="{{ path('blog_be_dashboard') }}">Your Blog Dashboard</a></h1>{% endblock %}
+            </section>
+            {% block menu %}
+            <section class="main-menu">
+                <ul>
+                    <li><a href="{{ path('blog_be_posts') }}">posts</a></li>
+                    <li><a href="#">categories</a></li>
+                    <li><a href="#">taxonomy</a></li>
+                    <li><a href="#">comments</a></li>
+                </ul>
+            </section>
+            {% endblock %}
             {% block content %}{% endblock %}
         </section>
     </body>

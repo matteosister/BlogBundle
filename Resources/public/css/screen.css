@@ -579,6 +579,18 @@ section#container .loud {
 }
 
 /* line 35, ../../assets/backend/sass/screen.scss */
+.header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 960px;
+}
+/* line 147, ../../../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .header {
+  overflow-x: hidden;
+}
+
+/* line 39, ../../assets/backend/sass/screen.scss */
 .content {
   display: inline;
   float: left;

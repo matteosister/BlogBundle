@@ -13,7 +13,7 @@ use Cypress\BlogBundle\Entity\Category;
 use Cypress\BlogBundle\Entity\Comment;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Cypress\BlogBundle\Repository\PostRepository")
  * @ORM\Table(name="blog_posts")
  * @ORM\HasLifecycleCallbacks
  */
