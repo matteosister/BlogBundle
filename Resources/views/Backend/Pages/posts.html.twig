@@ -1,0 +1,9 @@
+{% extends "CypressBlogBundle:Backend:base.html.twig" %}
+
+{% block context %}posts{% endblock %}
+
+{% block content %}
+<section class="content">
+    {% include "CypressBlogBundle:Backend:Slices/post_list.html.twig" %}
+</section>
+{% endblock %}
